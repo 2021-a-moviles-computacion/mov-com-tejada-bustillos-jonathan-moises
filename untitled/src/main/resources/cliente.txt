@@ -1,0 +1,5 @@
+1,Alvin,yaquitory,1750702068,Mena 2
+2,Esteban,Ramirez,1750702068,Cumbaya
+3,juan,as,1750702068,mena3
+5,Mufasa,Concurrente,1750702065,Universo 616
+6,Wilman A,Armijos,175072069,Teatro Mexico

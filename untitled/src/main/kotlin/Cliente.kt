@@ -1,15 +1,15 @@
 import java.io.File
 import java.util.*
 
-class Cliente {
-    private var nombre:String?=null
-    private var apellido:String?=null
-    private var idCliente:Int=0
-    private var cedula:String?=null
-    private var direccion:String?=null
-    init {
-        agregarCliente()
-    }
+class Cliente(
+    private var nombre:String ?=null,
+    private var apellido:String ?=null,
+    private var idCliente:Int ?=null,
+    private var cedula:String ?=null,
+    private var direccion:String ?=null
+) {
+
+
 
 
 
@@ -18,7 +18,7 @@ class Cliente {
         return this.nombre
     }
 
-    fun setNombre(nombre:String?){
+    fun setNombre(nombre:String){
         this.nombre=nombre
     }
 
@@ -37,9 +37,9 @@ class Cliente {
         return this.idCliente
     }
 
-    fun setIdCliente(){
+    fun setIdCliente(idCliente:Int) {
 
-        this.idCliente= ultimoIdCliente
+        this.idCliente = idCliente
     }
 
     fun getDireccion():String?{
@@ -59,29 +59,12 @@ class Cliente {
         this.cedula=cedula
     }
 
-    fun grabarClienteEnArchivo(cliente:Cliente):Boolean{
-        val control=true
 
-        val fileName="src/main/resources/cliente.txt"
-        val fileContents= cliente.toString()
-        var file = File("${fileName}")
-        file.appendText(fileContents)
-
-
-
-        return control
-    }
 
     override fun toString(): String {
         return idCliente.toString()+","+nombre+","+apellido+","+cedula+","+direccion+"\n"
 
     }
 
-    companion object{
-        var ultimoIdCliente=0
-        fun agregarCliente(){
-            ultimoIdCliente= ultimoIdCliente+1
-            println(ultimoIdCliente)
-        }
-    }
+
 }

@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1844b166-aa44-47a8-935b-a6ec8509105f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/modules/untitled.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/src/main/kotlin/Cliente.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/src/main/kotlin/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/src/main/kotlin/Mascota.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/src/main/resources/cliente.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/src/main/kotlin/Cliente.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/src/main/kotlin/Cliente.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/src/main/resources/cliente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/src/main/resources/cliente.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +95,7 @@
       <workItem from="1623255268571" duration="6143000" />
       <workItem from="1623687278742" duration="6275000" />
       <workItem from="1625102065716" duration="2974000" />
+      <workItem from="1626726178411" duration="2910000" />
     </task>
     <servers />
   </component>
