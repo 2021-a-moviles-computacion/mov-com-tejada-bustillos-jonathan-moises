@@ -1,0 +1,2 @@
+rootProject.name = "Moviles-comunicacion-2021-a"
+include ':app'
