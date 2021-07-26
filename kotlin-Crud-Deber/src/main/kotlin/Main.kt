@@ -271,7 +271,7 @@ fun eliminarMascota(lista:ArrayList<Mascota>):ArrayList<Mascota> {
             if(it.getIdMascota()== aux.toInt() && control){
                 control=false
                 // control2=false
-
+                objMascota=it
 
             }
 
