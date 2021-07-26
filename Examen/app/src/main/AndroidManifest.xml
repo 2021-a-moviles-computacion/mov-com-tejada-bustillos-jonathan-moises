@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Examen">
+        <activity android:name=".CrearMascota"></activity>
+        <activity android:name=".EditarMascota" />
+        <activity android:name=".VerMascota" />
+        <activity android:name=".EditarClientes" />
+        <activity android:name=".CrearCliente" />
+        <activity android:name=".VerClientes" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
