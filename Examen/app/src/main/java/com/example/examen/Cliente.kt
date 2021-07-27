@@ -8,67 +8,76 @@ class Cliente(
     private var apellido:String ?=null,
     private var idCliente:Int ?=null,
     private var cedula:String ?=null,
-    private var direccion:String ?=null
+    private var direccion:String ?=null,
+    private var numeroDeTelefono:String ?=null
 ):Parcelable {
+
+
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readString(),
+        parcel.readString(),
         parcel.readString()
     ) {
     }
 
-
-    fun getNombre():String?{
+    fun getNombre(): String? {
         return this.nombre
     }
 
-    fun setNombre(nombre:String){
-        this.nombre=nombre
+    fun setNombre(nombre: String) {
+        this.nombre = nombre
     }
 
-    fun getApellido():String?{
+    fun getApellido(): String? {
         return this.apellido
     }
 
-    fun setApellido(apellido:String){
-        this.apellido=apellido
+    fun setApellido(apellido: String) {
+        this.apellido = apellido
     }
 
 
-
-    fun getIdCliente():Int?{
+    fun getIdCliente(): Int? {
 
         return this.idCliente
     }
 
-    fun setIdCliente(idCliente:Int) {
+    fun setIdCliente(idCliente: Int) {
 
         this.idCliente = idCliente
     }
 
-    fun getDireccion():String?{
+    fun getDireccion(): String? {
         return this.direccion
     }
 
-    fun setDireccion(direccion:String){
+    fun setDireccion(direccion: String) {
 
-        this.direccion=direccion
+        this.direccion = direccion
     }
 
-    fun getCedula():String?{
+    fun getCedula(): String? {
         return this.cedula
     }
 
-    fun setCedula(cedula:String){
-        this.cedula=cedula
+    fun setCedula(cedula: String) {
+        this.cedula = cedula
+    }
+
+    fun getNUmeroDeTelefono(): String? {
+        return this.numeroDeTelefono
+    }
+
+    fun setNUmeroDeTelefono(numeroDeTelefono: String?) {
+        this.numeroDeTelefono = numeroDeTelefono
     }
 
 
-
     override fun toString(): String {
-        return idCliente.toString()+","+nombre+","+apellido+","+cedula+","+direccion+"\n"
+        return idCliente.toString() + "," + nombre + "," + apellido + "," + cedula + "," + direccion + "\n"
 
     }
 
@@ -78,6 +87,7 @@ class Cliente(
         parcel.writeValue(idCliente)
         parcel.writeString(cedula)
         parcel.writeString(direccion)
+        parcel.writeString(numeroDeTelefono)
     }
 
     override fun describeContents(): Int {
@@ -93,6 +103,4 @@ class Cliente(
             return arrayOfNulls(size)
         }
     }
-
-
 }

@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName11"
+        android:id="@+id/txt_editar_cliente_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName12"
+        android:id="@+id/txt_editar_cliente_apellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -59,13 +59,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Apellido"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName11"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_cliente_nombre"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName11"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName11" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_cliente_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_cliente_nombre" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName13"
+        android:id="@+id/txt_editar_cliente_direccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -82,13 +82,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Direccion"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName12"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_cliente_apellido"
         app:layout_constraintHorizontal_bias="0.006"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName12"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_cliente_apellido"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_cliente_apellido" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName14"
+        android:id="@+id/txt_editar_cliente_cedula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -105,10 +105,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Cedula"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName13"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_cliente_direccion"
         app:layout_constraintHorizontal_bias="0.017"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName13"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName13" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_cliente_direccion"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_cliente_direccion" />
 
     <TextView
         android:id="@+id/textView18"
@@ -116,13 +116,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="Numero de Telefono"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName14"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_cliente_cedula"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName14"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName14" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_cliente_cedula"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_cliente_cedula" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName15"
+        android:id="@+id/txt_editar_cliente_numTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -134,21 +134,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_editar_cliente_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Editar"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName15"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_cliente_numTelefono"
         app:layout_constraintHorizontal_bias="0.017"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName15"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName15" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_cliente_numTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_cliente_numTelefono" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btn_editar_cliente_cancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
         android:text="cancelar"
-        tools:layout_editor_absoluteX="211dp"
-        tools:layout_editor_absoluteY="638dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_editar_cliente_editar"
+        app:layout_constraintStart_toEndOf="@+id/btn_editar_cliente_editar"
+        app:layout_constraintTop_toTopOf="@+id/btn_editar_cliente_editar"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

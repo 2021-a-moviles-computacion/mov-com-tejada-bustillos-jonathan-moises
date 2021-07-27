@@ -19,25 +19,25 @@
         app:layout_constraintVertical_bias="0.049" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_editar_mascota_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="EDITAR"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName20"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_mascota_sexo"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName20"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName20" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_mascota_sexo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_mascota_sexo" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btn_editar_mascota_cancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
         android:text="CANCELAR"
-        app:layout_constraintBottom_toBottomOf="@+id/button7"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_editar_mascota_editar"
+        app:layout_constraintStart_toEndOf="@+id/btn_editar_mascota_editar"
+        app:layout_constraintTop_toTopOf="@+id/btn_editar_mascota_editar"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -57,13 +57,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Especie"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName17"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_mascota_nombre"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName17"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName17" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_mascota_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_mascota_nombre" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName16"
+        android:id="@+id/txt_editar_mascota_especie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName17"
+        android:id="@+id/txt_editar_mascota_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -92,10 +92,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Raza"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName16"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_mascota_especie"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName16"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName16" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_mascota_especie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_mascota_especie" />
 
     <TextView
         android:id="@+id/textView23"
@@ -103,10 +103,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Fecha De Nacimiento"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName18"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_mascota_raza"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName18"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName18" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_mascota_raza"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_mascota_raza" />
 
     <TextView
         android:id="@+id/textView24"
@@ -114,13 +114,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Sexo"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName19"
+        app:layout_constraintEnd_toEndOf="@+id/txt_editar_mascota_fechaNac"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName19"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName19" />
+        app:layout_constraintStart_toStartOf="@+id/txt_editar_mascota_fechaNac"
+        app:layout_constraintTop_toBottomOf="@+id/txt_editar_mascota_fechaNac" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName18"
+        android:id="@+id/txt_editar_mascota_raza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -132,7 +132,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName19"
+        android:id="@+id/txt_editar_mascota_fechaNac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -144,7 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName20"
+        android:id="@+id/txt_editar_mascota_sexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

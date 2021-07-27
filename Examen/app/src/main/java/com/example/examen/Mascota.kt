@@ -11,7 +11,9 @@ class Mascota (
     private var fechaNac:String ?=null,
     private var idMascota:Int ?=null,
     private var idCliente:Int ?=null,
-    private var sexo:Char ?=null):Parcelable{
+    private var sexo:Char ?=null,
+    private var raza:String ?=null,
+    ):Parcelable{
 
 
     constructor(parcel: Parcel) : this(
@@ -39,6 +41,14 @@ class Mascota (
     fun setEspecie(especie:String){
         this.especie=especie
     }
+    fun getRaza(): String? {
+        return this.raza
+    }
+
+    fun setRaza(raza:String){
+        this.raza=raza
+    }
+
     fun getFechaNac():String?{
         return this.fechaNac
     }

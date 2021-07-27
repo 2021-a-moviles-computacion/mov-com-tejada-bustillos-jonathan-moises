@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/txt_registrar_mascota_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -47,13 +47,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Especie"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_mascota_nombre"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintStart_toStartOf="@+id/txt_registrar_mascota_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_mascota_nombre" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/txt_registrar_mascota_especie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -70,13 +70,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Raza"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName7"
+        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_mascota_especie"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName7"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+        app:layout_constraintStart_toStartOf="@+id/txt_registrar_mascota_especie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_mascota_especie" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/txt_registrar_mascota_raza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -93,13 +93,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Fecha de Nacimiento"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName8"
+        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_mascota_raza"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName8"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+        app:layout_constraintStart_toStartOf="@+id/txt_registrar_mascota_raza"
+        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_mascota_raza" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName9"
+        android:id="@+id/txt_registrar_mascota_fecNac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -114,13 +114,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Sexo"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName9"
+        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_mascota_fecNac"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName9"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+        app:layout_constraintStart_toStartOf="@+id/txt_registrar_mascota_fecNac"
+        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_mascota_fecNac" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName10"
+        android:id="@+id/txt_registrar_mascota_sexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -132,24 +132,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_registrar_mascota_cancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:text="CANCELAR"
-        app:layout_constraintBottom_toBottomOf="@+id/button4"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_registrar_mascota_aceptar"
+        app:layout_constraintStart_toEndOf="@+id/btn_registrar_mascota_aceptar"
+        app:layout_constraintTop_toTopOf="@+id/btn_registrar_mascota_aceptar"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_registrar_mascota_aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="REGISTRAR"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName10"
+        android:text="ACEPTAR"
+        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_mascota_sexo"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName10"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
+        app:layout_constraintStart_toStartOf="@+id/txt_registrar_mascota_sexo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_mascota_sexo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

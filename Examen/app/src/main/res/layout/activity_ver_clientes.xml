@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".VerClientes">
 
+    <Button
+        android:id="@+id/btn_ver_clientes_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <ListView
+        android:layout_width="382dp"
+        android:layout_height="574dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.726" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="164dp"
+        android:text="Clientes"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_ver_clientes_crear"
+        app:layout_constraintEnd_toStartOf="@+id/btn_ver_clientes_crear"
+        app:layout_constraintTop_toTopOf="@+id/btn_ver_clientes_crear"
+        app:layout_constraintVertical_bias="0.413" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
