@@ -77,7 +77,7 @@ class Cliente(
 
 
     override fun toString(): String {
-        return idCliente.toString() + "," + nombre + "," + apellido + "," + cedula + "," + direccion + "\n"
+        return idCliente.toString() + "," + nombre + "," + apellido + "," + cedula + "," + direccion+","+numeroDeTelefono
 
     }
 

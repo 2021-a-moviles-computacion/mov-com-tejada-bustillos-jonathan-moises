@@ -12,7 +12,7 @@ class Mascota (
     private var idMascota:Int ?=null,
     private var idCliente:Int ?=null,
     private var sexo:Char ?=null,
-    private var raza:String ?=null,
+    private var raza:String ?=null
     ):Parcelable{
 
 
@@ -22,7 +22,8 @@ class Mascota (
         parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readValue(Char::class.java.classLoader) as? Char
+        parcel.readValue(Char::class.java.classLoader) as? Char,
+        parcel.readString()
     ) {
     }
 
@@ -80,7 +81,7 @@ class Mascota (
 
 
     override fun toString(): String {
-        return idCliente.toString()+","+idMascota+","+nombre+","+especie+","+fechaNac+","+sexo.toString()+"\n"
+        return idCliente.toString()+","+idMascota+","+nombre+","+especie+","+raza+","+fechaNac+","+sexo.toString()
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -90,6 +91,7 @@ class Mascota (
         parcel.writeValue(idMascota)
         parcel.writeValue(idCliente)
         parcel.writeValue(sexo)
+        parcel.writeString(raza)
     }
 
     override fun describeContents(): Int {
@@ -105,5 +107,6 @@ class Mascota (
             return arrayOfNulls(size)
         }
     }
+
 
 }

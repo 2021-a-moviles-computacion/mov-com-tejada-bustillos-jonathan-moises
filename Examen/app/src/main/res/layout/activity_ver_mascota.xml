@@ -30,6 +30,7 @@
         app:layout_constraintVertical_bias="0.551" />
 
     <ListView
+        android:id="@+id/viewList_Mascotas"
         android:layout_width="391dp"
         android:layout_height="614dp"
         app:layout_constraintBottom_toBottomOf="parent"

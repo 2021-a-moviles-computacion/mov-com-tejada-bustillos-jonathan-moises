@@ -20,11 +20,20 @@
 
     <EditText
         android:id="@+id/txt_registrar_cliente_nombre"
-        android:layout_width="191dp"
-        android:layout_height="35dp"
+        android:layout_width="241dp"
+        android:layout_height="55dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="textPersonName"
+
+        android:padding="0sp"
+        android:paddingStart="0sp"
+        android:paddingLeft="0sp"
+        android:paddingTop="0sp"
+        android:paddingEnd="0sp"
+        android:paddingRight="0sp"
+        android:paddingBottom="0sp"
+
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -43,8 +52,8 @@
 
     <EditText
         android:id="@+id/txt_registrar_cliente_apellido"
-        android:layout_width="192dp"
-        android:layout_height="31dp"
+        android:layout_width="249dp"
+        android:layout_height="50dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -77,8 +86,8 @@
 
     <EditText
         android:id="@+id/txt_registrar_cliente_direccion"
-        android:layout_width="305dp"
-        android:layout_height="42dp"
+        android:layout_width="308dp"
+        android:layout_height="52dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -148,7 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:text="ACCEPTAR"
+        android:text="ACEPTAR"
         app:layout_constraintEnd_toEndOf="@+id/txt_registrar_cliente_numTelefono"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txt_registrar_cliente_numTelefono"

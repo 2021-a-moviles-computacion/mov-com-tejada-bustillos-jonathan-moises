@@ -18,7 +18,7 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
     override fun onCreate(db: SQLiteDatabase?) {
         val scriptCrearDesarrollador="""
             create table Cliente(
-            	idCliente int primary key autoincrement,
+            	idCliente integer primary key autoincrement,
             	nombre varchar(50),
             	apellido varchar(50),
             	direccion varchar(50),
@@ -31,14 +31,14 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
 
         val scriptCrearAplicacion="""
             create table Mascota(
-            	idMascota int primary key autoincrement,
-            	idMascotaCliente int foreign key references Cliente(idCliente),
+            	idMascota integer primary key autoincrement,
+            	idMascotaCliente integer,
             	nombre varchar(50),
             	especie varchar(50),
             	raza varchar(50),
             	fechaDeNacimiento date,
             	sexo character(1)
-            );
+            )
         """.trimIndent()
         Log.i("onCreateDataBase","Creando la tabla de Mascota")
         db?.execSQL(scriptCrearAplicacion)
@@ -59,6 +59,7 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
         aGuardar.put("direccion",direccion)
         aGuardar.put("cedula",cedula)
         aGuardar.put("numeroDeTelefono",numeroDeTelefono)
+
         val resultadoEscritura: Long = conexionEscritura.insert(
             "Cliente",
             null,
@@ -69,11 +70,11 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
     }
 
     fun crearMascota(
-        idCliente: String,
+        idCliente: Int,
         nombre: String,
         especie: String,
         raza: String,
-        fechaDeNacimiento: Boolean,
+        fechaDeNacimiento: String,
         sexo: Char
     ):Boolean {
         val conexionEscritura = writableDatabase
@@ -83,10 +84,10 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
         aGuardar.put("especie",especie)
         aGuardar.put("raza",raza)
         aGuardar.put("fechaDeNacimiento",fechaDeNacimiento)
-        aGuardar.put("fsexo",sexo.toString())
+        aGuardar.put("sexo",sexo.toString())
 
         val resultadoEscritura: Long = conexionEscritura.insert(
-            "Aplicacion",
+            "Mascota",
             null,
             aGuardar
         )
@@ -103,10 +104,10 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
         val baseDatosLectura = readableDatabase
         val resultadoLectura = baseDatosLectura.rawQuery(scriptConsultarUsuario, null)
         val listaClientes = arrayListOf<Cliente>()
-        val clienteEncontrado = Cliente("","",0,"","","")
+
         if (resultadoLectura.moveToFirst()) {
             do {
-
+                    val clienteEncontrado = Cliente("","",0,"","","")
                     if (resultadoLectura.getInt(0)!=null) {
                     clienteEncontrado.setIdCliente(resultadoLectura.getInt(0))
                     clienteEncontrado.setNombre(resultadoLectura.getString(1))
@@ -130,10 +131,10 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
         val baseDatosLectura = readableDatabase
         val resultadoLectura = baseDatosLectura.rawQuery(scriptConsultarUsuario, null)
         val listaMascotas = arrayListOf<Mascota>()
-        val mascotaEncontrada = Mascota("","","",0,0,' ',"")
+
         if (resultadoLectura.moveToFirst()) {
             do {
-
+                val mascotaEncontrada = Mascota("","","",0,0,' ',"")
                 if (resultadoLectura.getInt(0)!=null) {
                     mascotaEncontrada.setIdMascota(resultadoLectura.getInt(0))
                     mascotaEncontrada.setIdCliente(resultadoLectura.getInt(1))
@@ -150,6 +151,7 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
         }
         baseDatosLectura.close()
         resultadoLectura.close()
+        println("tamaño de la lista"+listaMascotas.size)
         return listaMascotas
     }
 
@@ -157,7 +159,7 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
 
     fun consultarCliente(idCliente: Int): Cliente{
         val scriptConsultarUsuario = """
-            select * from Desarrollador where idDesarrollador=${idCliente}
+            select * from Cliente where idCliente=${idCliente}
         """.trimIndent()
         val baseDatosLectura = readableDatabase
         val resultadoLectura = baseDatosLectura.rawQuery(scriptConsultarUsuario, null)
@@ -223,7 +225,7 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
         val resultadoActualizacion = conexionEscritura.update(
             "Cliente",
             valoresActualizar,
-            "idcliente=${objCliente.getIdCliente()}",
+            "idCliente=?",
             arrayOf(objCliente.getIdCliente().toString())
         )
         conexionEscritura.close()
@@ -241,9 +243,9 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
         valoresActualizar.put("fechaDeNacimiento",objMascota.getFechaNac())
         valoresActualizar.put("sexo",objMascota.getSexo().toString())
         val resultadoActualizacion = conexionEscritura.update(
-            "mascota",
+            "Mascota",
             valoresActualizar,
-            "idMascota=${objMascota.getIdMascota()} and Cliente.idCliente=${objMascota.getIdCliente()}",
+            "idMascota=?",
             arrayOf(objMascota.getIdMascota().toString())
         )
         conexionEscritura.close()
@@ -257,18 +259,18 @@ class SQLdatabase(contexto: Context?): SQLiteOpenHelper(
         val conexionEscritura = writableDatabase
         val resultadoEliminacion = conexionEscritura.delete(
             "CLiente",
-            "idCliente${idCliente}",
+            "idCliente=?",
             arrayOf(idCliente.toString())
         )
         conexionEscritura.close()
         return resultadoEliminacion.toInt() != -1
     }
 
-    fun eliminarMascota(idMascota: Int, idMascotaCliente: Int): Boolean {
+    fun eliminarMascota(idMascota: Int): Boolean {
         val conexionEscritura = writableDatabase
         val resultadoEliminacion = conexionEscritura.delete(
             "Mascota",
-            "idMascota=${idMascota} and Cliente.idCliente=${idMascotaCliente}",
+            "idMascota=?",
             arrayOf(idMascota.toString())
         )
         conexionEscritura.close()
