@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="800px"
-    android:layout_height="600px"
+    android:layout_height="530px"
     android:orientation="vertical"
     android:paddingLeft="40px"
     android:paddingTop="40px"
@@ -11,7 +11,7 @@
     android:paddingBottom="40px">
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/image_oferta"
         android:layout_width="match_parent"
         android:layout_height="119dp"
         android:layout_weight="1"
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingTop="30px"
+        android:paddingTop="15px"
         android:text="NombreOferta"
         android:textColor="@color/black"
         android:textSize="17sp" />
@@ -32,6 +32,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingTop="20px"
+        android:paddingTop="10px"
         android:text="Descripcion oferta" />
 </LinearLayout>

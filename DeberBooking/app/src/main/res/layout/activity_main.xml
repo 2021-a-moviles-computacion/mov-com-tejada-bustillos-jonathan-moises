@@ -347,9 +347,12 @@
                 android:background="@drawable/contrainborder">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_width="410dp"
+                    android:layout_height="261dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/textView12"
@@ -364,10 +367,12 @@
                         android:textStyle="bold" />
 
                     <HorizontalScrollView
+                        android:id="@+id/sv_ofertas"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="209dp">
 
                         <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_ofertas"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="horizontal" />
@@ -401,10 +406,12 @@
                         android:textStyle="bold" />
 
                     <HorizontalScrollView
+                        android:id="@+id/hsv_busqueda"
                         android:layout_width="match_parent"
                         android:layout_height="153dp">
 
                         <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_busqueda"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                     </HorizontalScrollView>
