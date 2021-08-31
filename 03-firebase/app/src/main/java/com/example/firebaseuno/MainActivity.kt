@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btn_IrProductos.visibility= View.INVISIBLE
+        setBienvenida()
     }
 
     private fun llamarLogOutUsuario() {
@@ -93,7 +94,7 @@ class MainActivity : AppCompatActivity() {
     private fun registrarUsuarioPorPrimeraVez(usuario: IdpResponse) {
         val usuarioLogeado = FirebaseAuth.getInstance().getCurrentUser()
 
-        if (usuario.email != null){
+        if (usuario.email != null && usuarioLogeado != null){
             val db = Firebase.firestore
             val rolesUsuario = arrayListOf("usuario")
             val idUsuario = usuario.email
@@ -101,6 +102,7 @@ class MainActivity : AppCompatActivity() {
 
             db.collection("usuario").document(idUsuario.toString()).set(nuevoUsuario).addOnSuccessListener {
                 Log.i("firebase-login","Se creo")
+                setUsuarioFirebase()
             }
                 .addOnFailureListener{
                     Log.i("firebase-login","Fallo")
@@ -119,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                 val db = Firebase.firestore
 
                 val referencia = db
-                    .collection("Usuario")
+                    .collection("usuario")
                     .document(usuarioLocal.email.toString())
 
                 referencia
