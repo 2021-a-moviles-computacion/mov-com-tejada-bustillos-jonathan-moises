@@ -13,9 +13,42 @@
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.199" />
+        app:layout_constraintVertical_bias="0.133" />
+
+    <TextView
+        android:id="@+id/txv_bienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_login"
+        app:layout_constraintStart_toEndOf="@+id/btn_login"
+        app:layout_constraintTop_toTopOf="@+id/btn_login"
+        app:layout_constraintVertical_bias="0.448" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:text="LOGOUT"
+        app:layout_constraintEnd_toEndOf="@+id/txv_bienvenida"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txv_bienvenida"
+        app:layout_constraintTop_toBottomOf="@+id/txv_bienvenida" />
+
+    <Button
+        android:id="@+id/btn_IrProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="Productos"
+        app:layout_constraintEnd_toEndOf="@+id/btn_logout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_logout"
+        app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
