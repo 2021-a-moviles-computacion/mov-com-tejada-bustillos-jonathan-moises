@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ordenes">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Restaurantes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sp_restaurantes"
+        android:layout_width="269dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Spinner
+        android:id="@+id/sp_producto"
+        android:layout_width="274dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="@+id/sp_restaurantes"
+        app:layout_constraintStart_toStartOf="@+id/sp_restaurantes"
+        app:layout_constraintTop_toBottomOf="@+id/sp_restaurantes" />
+
+    <Button
+        android:id="@+id/btn_anadir_lista_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="ADD"
+        app:layout_constraintBottom_toBottomOf="@+id/sp_producto"
+        app:layout_constraintStart_toEndOf="@+id/sp_producto"
+        app:layout_constraintTop_toTopOf="@+id/sp_producto"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="ListaDeProductos"
+        app:layout_constraintEnd_toEndOf="@+id/et_cantidad_producto"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="@+id/et_cantidad_producto"
+        app:layout_constraintTop_toBottomOf="@+id/et_cantidad_producto" />
+
+    <EditText
+        android:id="@+id/et_cantidad_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Ingrese la cantidad"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/sp_producto"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="@+id/sp_producto"
+        app:layout_constraintTop_toBottomOf="@+id/sp_producto" />
+
+    <ListView
+        android:id="@+id/lv_lista_productos"
+        android:layout_width="339dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/btn_completar_pedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="@+id/lv_lista_productos"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="@+id/lv_lista_productos"
+        app:layout_constraintTop_toBottomOf="@+id/lv_lista_productos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

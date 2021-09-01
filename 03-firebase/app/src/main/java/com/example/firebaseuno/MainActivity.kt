@@ -40,6 +40,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btn_IrProductos.visibility= View.INVISIBLE
+        val btn_IrRestaurante = findViewById<Button>(R.id.btn_restaurante)
+        btn_IrRestaurante.setOnClickListener {
+            val intent = Intent(
+                this,
+                Restaurante::class.java
+            )
+            startActivity(intent)
+        }
+        btn_IrRestaurante.visibility= View.INVISIBLE
+
         setBienvenida()
     }
 
@@ -154,17 +164,20 @@ class MainActivity : AppCompatActivity() {
         val btn_LogIn = findViewById<Button>(R.id.btn_login)
         val btn_LogOut = findViewById<Button>(R.id.btn_logout)
         val btn_IrProductos = findViewById<Button>(R.id.btn_IrProductos)
+        val btn_IrRestaurante = findViewById<Button>(R.id.btn_restaurante)
         if (AuthUser.usuario != null) {
             txv_mensaje.text = "Bienvenido a la aplicación ${AuthUser.usuario?.email}"
             btn_LogIn.visibility = View.INVISIBLE
             btn_LogOut.visibility = View.VISIBLE
             btn_IrProductos.visibility = View.VISIBLE
+            btn_IrRestaurante.visibility = View.VISIBLE
         }
         else {
             txv_mensaje.text = "Ingrese a la aplicación por favor"
             btn_LogIn.visibility = View.VISIBLE
             btn_LogOut.visibility = View.INVISIBLE
             btn_IrProductos.visibility = View.INVISIBLE
+            btn_IrRestaurante.visibility = View.INVISIBLE
         }
     }
 
