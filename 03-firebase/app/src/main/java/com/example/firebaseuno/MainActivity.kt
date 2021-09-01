@@ -1,7 +1,6 @@
 package com.example.firebaseuno
 
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -49,7 +48,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btn_IrRestaurante.visibility= View.INVISIBLE
-
+        val btn_IrOrdenes = findViewById<Button>(R.id.btn_ordenes)
+        btn_IrOrdenes.setOnClickListener {
+            val intent = Intent(
+                this,
+                Ordenes::class.java
+            )
+            startActivity(intent)
+        }
+        btn_IrOrdenes.visibility= View.INVISIBLE
         setBienvenida()
     }
 
@@ -140,7 +147,7 @@ class MainActivity : AppCompatActivity() {
                         val usuarioObtenido: DTOUser? =
                             it.toObject(DTOUser::class.java)
                         if (usuarioObtenido != null) {
-                            AuthUser.usuario = UsuarioAutenticado(
+                            AuthUser.usuario = UsuarioAutenticadoOBJ(
                                 usuarioObtenido.uid,
                                 usuarioObtenido.email,
                                 usuarioObtenido.roles
@@ -165,12 +172,14 @@ class MainActivity : AppCompatActivity() {
         val btn_LogOut = findViewById<Button>(R.id.btn_logout)
         val btn_IrProductos = findViewById<Button>(R.id.btn_IrProductos)
         val btn_IrRestaurante = findViewById<Button>(R.id.btn_restaurante)
+        val btn_IrOrdenes = findViewById<Button>(R.id.btn_ordenes)
         if (AuthUser.usuario != null) {
             txv_mensaje.text = "Bienvenido a la aplicación ${AuthUser.usuario?.email}"
             btn_LogIn.visibility = View.INVISIBLE
             btn_LogOut.visibility = View.VISIBLE
             btn_IrProductos.visibility = View.VISIBLE
             btn_IrRestaurante.visibility = View.VISIBLE
+            btn_IrOrdenes.visibility= View.VISIBLE
         }
         else {
             txv_mensaje.text = "Ingrese a la aplicación por favor"
@@ -178,6 +187,7 @@ class MainActivity : AppCompatActivity() {
             btn_LogOut.visibility = View.INVISIBLE
             btn_IrProductos.visibility = View.INVISIBLE
             btn_IrRestaurante.visibility = View.INVISIBLE
+            btn_IrOrdenes.visibility= View.INVISIBLE
         }
     }
 
