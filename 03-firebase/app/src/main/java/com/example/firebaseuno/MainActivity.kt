@@ -57,6 +57,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btn_IrOrdenes.visibility= View.INVISIBLE
+
+
+        val btn_IrMapa = findViewById<Button>(R.id.btn_ir_mapa)
+        btn_IrMapa.setOnClickListener {
+            val intent = Intent(
+                this,
+                MapsActivity::class.java
+            )
+            startActivity(intent)
+        }
+
         setBienvenida()
     }
 
