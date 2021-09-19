@@ -6,7 +6,7 @@ import java.util.*
 class Cliente(
     private var nombre:String ?=null,
     private var apellido:String ?=null,
-    private var idCliente:Int ?=null,
+    private var idCliente:String ?=null,
     private var cedula:String ?=null,
     private var direccion:String ?=null,
     private var numeroDeTelefono:String ?=null
@@ -16,7 +16,7 @@ class Cliente(
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
@@ -40,12 +40,12 @@ class Cliente(
     }
 
 
-    fun getIdCliente(): Int? {
+    fun getIdCliente(): String? {
 
         return this.idCliente
     }
 
-    fun setIdCliente(idCliente: Int) {
+    fun setIdCliente(idCliente: String) {
 
         this.idCliente = idCliente
     }
@@ -77,14 +77,14 @@ class Cliente(
 
 
     override fun toString(): String {
-        return idCliente.toString() + "," + nombre + "," + apellido + "," + cedula + "," + direccion+","+numeroDeTelefono
+        return "Nombre: $nombre $apellido\nCedula: $cedula  | Celular: $numeroDeTelefono\nDireccion: $direccion."
 
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(nombre)
         parcel.writeString(apellido)
-        parcel.writeValue(idCliente)
+        parcel.writeString(idCliente)
         parcel.writeString(cedula)
         parcel.writeString(direccion)
         parcel.writeString(numeroDeTelefono)

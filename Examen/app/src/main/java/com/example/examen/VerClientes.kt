@@ -1,26 +1,28 @@
 package com.example.examen
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
-import com.example.proyectoibimestre.SQLdatabase
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
 
 class VerClientes : AppCompatActivity() {
     var selectedItemPosition =0
-
+    val listaClientes = arrayListOf<Cliente>()
     var adapter: ArrayAdapter<Cliente>?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_clientes)
 
-        refreshListViewCliente()
+       // refreshListViewCliente()
 
         val botonCrearCliente = findViewById<Button>(
             R.id.btn_ver_clientes_crear
@@ -31,19 +33,45 @@ class VerClientes : AppCompatActivity() {
     }
 
     private fun refreshListViewCliente() {
-        DBcomp.SQLdatabase = SQLdatabase(this)
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            DBcomp.SQLdatabase!!.consultarListaClientes()
-        )
 
-        val listViewVerClientes = findViewById<ListView>(
-            R.id.listView_Clientes
-        )
+        val db = Firebase.firestore
 
-        listViewVerClientes.adapter=adapter
-        registerForContextMenu(listViewVerClientes)
+        val clientes=db.collection("cliente")
+        listaClientes.clear()
+        clientes.get().addOnSuccessListener {   clienteSnap->
+            for (cliente in clienteSnap){
+
+                listaClientes.add(
+                    Cliente(
+                        cliente.getString("nombre"),
+                        cliente.getString("apellido"),
+                        cliente.id,
+                        cliente.getString("cedula"),
+                        cliente.getString("direccion"),
+                        cliente.getString("numTelefono")
+                    )
+                )
+            }
+            val adapter = ArrayAdapter(
+                this,
+                android.R.layout.simple_list_item_1,
+                listaClientes
+            )
+            val listViewVerClientes = findViewById<ListView>(
+                R.id.listView_Clientes
+            )
+
+            listViewVerClientes.adapter=adapter
+            registerForContextMenu(listViewVerClientes)
+            Log.i("firebase","Lista actualizada ")
+
+        }.addOnFailureListener {
+            Log.i("firebase","Error conusltando cliente")
+        }
+
+
+
+
     }
 
     fun abrirActividad(
@@ -79,7 +107,13 @@ class VerClientes : AppCompatActivity() {
 
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-        var clienteSeleccionado = DBcomp.SQLdatabase!!.consultarListaClientes()[selectedItemPosition]
+
+        var db = Firebase.firestore
+        var clienteSeleccionado:Cliente= listaClientes[selectedItemPosition]
+
+
+        //var clienteSeleccionado = DBcomp.SQLdatabase!!.consultarListaClientes()[selectedItemPosition]
+
         return when(item?.itemId){
             R.id.editar -> {
                 abrirActividadConParametros(EditarClientes::class.java,clienteSeleccionado!!)
@@ -87,12 +121,18 @@ class VerClientes : AppCompatActivity() {
                 return true
             }
             R.id.eliminar -> {
-                if (DBcomp.SQLdatabase != null) {
-                    DBcomp.SQLdatabase!!.eliminarCliente(clienteSeleccionado.getIdCliente()!!)
-                    adapter?.remove(adapter!!.getItem(selectedItemPosition))
-                    adapter?.notifyDataSetChanged()
-                }
+                db.collection("cliente").document("${clienteSeleccionado.getIdCliente()}").delete()
+                    .addOnSuccessListener {
+                        Log.i("firebase","ELiminado correctamente")
+                        //listaClientes.drop(selectedItemPosition)
+                        Toast.makeText(applicationContext,"Registro eliminado", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener {
+                        Log.i("firebase","Error eliminando")
+                    }
                 refreshListViewCliente()
+                adapter?.notifyDataSetChanged()
+
                 return true
             }
             R.id.consultarMascotas -> {

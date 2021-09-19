@@ -6,13 +6,15 @@ import java.time.LocalDate
 import java.util.*
 
 class Mascota (
-    private var nombre:String ?=null,
-    private var especie:String ?=null,
-    private var fechaNac:String ?=null,
-    private var idMascota:Int ?=null,
-    private var idCliente:Int ?=null,
-    private var sexo:Char ?=null,
-    private var raza:String ?=null
+     var nombre:String ?=null,
+     var especie:String ?=null,
+     var fechaNac:String ?=null,
+     var idMascota:String ?=null,
+     var idCliente:String ?=null,
+     var sexo:String ?=null,
+     var raza:String ?=null,
+     var lat:Double?=null,
+     var lon:Double?=null
     ):Parcelable{
 
 
@@ -20,78 +22,26 @@ class Mascota (
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readValue(Char::class.java.classLoader) as? Char,
-        parcel.readString()
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readValue(Double::class.java.classLoader) as? Double,
+        parcel.readValue(Double::class.java.classLoader) as? Double
+
     ) {
-    }
-
-    fun getNombre():String?{
-        return this.nombre
-    }
-
-    fun setNombre(nombre:String){
-        this.nombre=nombre
-    }
-
-    fun getEspecie():String?{
-        return this.especie
-    }
-
-    fun setEspecie(especie:String){
-        this.especie=especie
-    }
-    fun getRaza(): String? {
-        return this.raza
-    }
-
-    fun setRaza(raza:String){
-        this.raza=raza
-    }
-
-    fun getFechaNac():String?{
-        return this.fechaNac
-    }
-
-    fun setFechaNac(fechaNac: String?){
-        this.fechaNac=fechaNac
-    }
-    fun getIdCliente():Int?{
-        return this.idCliente
-    }
-
-    fun setIdCliente(idCliente: Int?){
-        this.idCliente=idCliente
-    }
-    fun getIdMascota():Int?{
-        return this.idMascota
-    }
-
-    fun setIdMascota(idMascota: Int?){
-        this.idMascota=idMascota
-    }
-    fun getSexo():Char?{
-        return this.sexo
-    }
-
-    fun setSexo(sexo:Char){
-        this.sexo=sexo
-    }
-
-
-    override fun toString(): String {
-        return idCliente.toString()+","+idMascota+","+nombre+","+especie+","+raza+","+fechaNac+","+sexo.toString()
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(nombre)
         parcel.writeString(especie)
         parcel.writeString(fechaNac)
-        parcel.writeValue(idMascota)
-        parcel.writeValue(idCliente)
-        parcel.writeValue(sexo)
+        parcel.writeString(idMascota)
+        parcel.writeString(idCliente)
+        parcel.writeString(sexo)
         parcel.writeString(raza)
+        parcel.writeValue(lat)
+        parcel.writeValue(lon)
     }
 
     override fun describeContents(): Int {
@@ -106,6 +56,10 @@ class Mascota (
         override fun newArray(size: Int): Array<Mascota?> {
             return arrayOfNulls(size)
         }
+    }
+
+    override fun toString(): String {
+        return "Nombre: $nombre  | Sexo: $sexo\nEspecie: $especie  | Raza: $raza"
     }
 
 

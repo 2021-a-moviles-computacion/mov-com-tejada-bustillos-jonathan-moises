@@ -4,162 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context=".CrearCliente">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrar Cliente"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <EditText
-        android:id="@+id/txt_registrar_cliente_nombre"
-        android:layout_width="241dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Registrar Cliente"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-        android:padding="0sp"
-        android:paddingStart="0sp"
-        android:paddingLeft="0sp"
-        android:paddingTop="0sp"
-        android:paddingEnd="0sp"
-        android:paddingRight="0sp"
-        android:paddingBottom="0sp"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            android:text="Nombre"
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Nombre"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/txt_registrar_cliente_apellido"
-        android:layout_width="249dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.012"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Apellido"
-        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_cliente_nombre"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="@+id/txt_registrar_cliente_nombre"
-        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_cliente_nombre" />
+        <EditText
+            android:id="@+id/txt_registrar_cliente_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Direccion"
-        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_cliente_apellido"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txt_registrar_cliente_apellido"
-        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_cliente_apellido" />
+            android:inputType="textPersonName"
 
-    <EditText
-        android:id="@+id/txt_registrar_cliente_direccion"
-        android:layout_width="308dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <EditText
-        android:id="@+id/txt_registrar_cliente_cedula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Cedula"
-        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_cliente_direccion"
-        app:layout_constraintHorizontal_bias="0.011"
-        app:layout_constraintStart_toStartOf="@+id/txt_registrar_cliente_direccion"
-        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_cliente_direccion" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Numero de Teléfono"
-        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_cliente_cedula"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="@+id/txt_registrar_cliente_cedula"
-        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_cliente_cedula" />
+            android:text="Apellido" />
 
-    <EditText
-        android:id="@+id/txt_registrar_cliente_numTelefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView7"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        <EditText
+            android:id="@+id/txt_registrar_cliente_apellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/btn_registrar_cliente_cancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:text="CANCELAR"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_registrar_cliente_aceptar"
-        app:layout_constraintStart_toEndOf="@+id/btn_registrar_cliente_aceptar"
-        app:layout_constraintTop_toTopOf="@+id/btn_registrar_cliente_aceptar"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/btn_registrar_cliente_aceptar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="ACEPTAR"
-        app:layout_constraintEnd_toEndOf="@+id/txt_registrar_cliente_numTelefono"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txt_registrar_cliente_numTelefono"
-        app:layout_constraintTop_toBottomOf="@+id/txt_registrar_cliente_numTelefono" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Direccion" />
+
+        <EditText
+            android:id="@+id/txt_registrar_cliente_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Cedula" />
+
+        <EditText
+            android:id="@+id/txt_registrar_cliente_cedula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:inputType="number" />
+
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Numero de Teléfono" />
+
+        <EditText
+            android:id="@+id/txt_registrar_cliente_numTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="number" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <Button
+                android:id="@+id/btn_registrar_cliente_cancelar"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="10dp"
+                android:text="CANCELAR" />
+
+            <Button
+                android:id="@+id/btn_registrar_cliente_aceptar"
+                android:layout_width="149dp"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="10dp"
+                android:text="ACEPTAR" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
